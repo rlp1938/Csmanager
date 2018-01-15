@@ -1,6 +1,6 @@
 /*    csmanager.c
  *
- * Copyright 2017 Robert L (Bob) Parker rlp1938@gmail.com
+ * Copyright 2018 Robert L (Bob) Parker rlp1938@gmail.com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -191,7 +191,7 @@ char
 		meminsert(buf, md, meminc);
 	}
 	doclosedir(thedir);
-	char **result = memblocktoarray(md);
+	char **result = memblocktoarray(md, 0);
 	free_mdata(md);
 	return result;
 } // gen_dirslist()
@@ -203,7 +203,7 @@ char
 */
 	mdata *md = readfile(filename, 1, 0);	// terminated with '\n'
 	memlinestostr(md);	// C strings
-	char **result = memblocktoarray(md);
+	char **result = memblocktoarray(md, 0);
 	free_mdata(md);
 	return result;
 } // gen_listfromfile()
@@ -387,7 +387,7 @@ char
 		meminsert(buf, md, meminc);
 	}
 	doclosedir(thedir);
-	char **result = memblocktoarray(md);
+	char **result = memblocktoarray(md, 0);
 	free_mdata(md);
 	return result;
 } // gen_fileslist()

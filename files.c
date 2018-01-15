@@ -71,7 +71,7 @@ xsystem(const char *cmd, int fatal)
 		fprintf(stderr, "system failed to execute: %s\n", cmd);
 		exit(EXIT_FAILURE);
 	}
-	int res;
+	int res = 0;
 	if (WIFEXITED(status)) {	// Child has terminated
 		res = WEXITSTATUS(status);
 		if (res) {

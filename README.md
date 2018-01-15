@@ -3,8 +3,6 @@
 **csmanager** is used hardlink files into a directory which is synced
 to cloud storage.
 
-
-
 ## SYNOPSIS
 
 **csmanager** \[options] source_dir
