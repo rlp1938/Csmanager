@@ -222,7 +222,8 @@ mdata
 
 int
 exists_file(const char *path)
-{	/* returns 1 if I can stat the file, 0 otherwise */
+{	/* returns 1 if I can stat the object and it's a regular file,
+	*  0 otherwise */
 	struct stat sb;
 	int res = stat(path, &sb);
 	if (res == -1) {
