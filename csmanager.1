@@ -9,12 +9,13 @@
 .PP
 \f[B]csmanager\f[] [\f[B]\-h\f[]] [\f[B]\-\-help\f[]]
 .PP
-\f[B]csmanager\f[] [\f[I]option\f[]] \f[I]source_dir\f[]
+\f[B]csmanager\f[] [\f[I]option\f[]] [\f[I]source_dir\f[]]
 .SH DESCRIPTION
 .PP
-\f[B]csmanager\f[] hard links files from the user selected source_dir
-into the target dir that is synchronised with cloud storage.
-Normally the target dir would be named \f[I]Dropbox\f[] or
+\f[B]csmanager\f[] hard links files from the user selected
+\f[I]source_dir\f[] into the \f[I]target dir\f[] that is synchronised
+with cloud storage.
+Normally the \f[I]target dir\f[] would be named \f[I]Dropbox\f[] or
 \f[I]Nextcloud\f[].
 The program creates required sub\-dirs under the target dir as required.
 The actual link management is performed by the program \f[B]synclink\f[]
@@ -32,28 +33,27 @@ Displays this help message then quits.
 .RS
 .RE
 .TP
-.B \f[B]\-D, \-\-dot\-dirs\f[]
-When run without options the program operates only on subdirs of the
-user input \f[I]source_dir\f[] which are not hidden, ie do not start
-with \[aq].\[aq] but when run with this option it links these hidden
-dirs into \f[I]source_dir\f[]/\f[B]dotty\f[].
-The intention here is to avoid any clash on the server with any dir
-names that have some meaning thereto.
+.B \f[B]\-f, \-\-dot\-files\-dir\f[]
+Only normal dirs are directly synced into the \f[I]cloud_dir\f[].
+Hidden dirs are synced into a sub\-dir of the \f[I]cloud_dir\f[].
+By default this sub\-dir is named \f[I]Dotty\f[].
+You may change the name of this sub\-dir with this option.
 .RS
 .RE
 .TP
-.B \f[B]\-t, \-\-target\f[] \f[I]target_dir\f[]
-The default target directory name is \f[B]Nextcloud\f[] but if you need
-to use \f[B]Dropbox\f[] you can use this option to chose it, or any
+.B \f[B]\-c, \-\-cloud\-target\f[] \f[I]target_dir\f[]
+The default target directory name is \f[I]Nextcloud\f[] but if you need
+to use \f[I]Dropbox\f[] you can use this option to chose it, or any
 other target directory name.
 .RS
 .RE
 .TP
-.B \f[B]\-f, \-\-files\-from\f[] \f[I]filename\f[]
+.B \f[B]\-d, \-\-dirs\-from\f[] \f[I]filename\f[]
+A file containing a list of dirs to be synced.
 Usually the program will be run using a directory as the source but it
-is possible to simply name a list of dirs and files to be linked onto
-the target dir.
-In this use the \f[B]\-t\f[] and \f[B]\-D\f[] options have no meaning.
+is possible to simply name a list of dirs to be linked onto the target
+dir.
+In this use the other options have no meaning.
 This option may be useful when using any free low volume space on offer
 from some \f[B]nextcloud\f[] servers.
 .RS
