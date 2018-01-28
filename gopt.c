@@ -43,10 +43,10 @@ options_t process_options(int argc, char **argv)
 		int this_option_optind = optind ? optind : 1;
 		int option_index = 0;
 		static struct option long_options[] = {
-		{"help",			0,	0,	'h'},
-		{"dirs-from",		1,	0,	'd'},
-		{"dot-files-dir",	1,	0,	'f'},
-		{"cloud-target",	1,	0,	'c'},
+		{"help",			0,	0,	'h'}, /* help text */
+		{"dirs-from",		1,	0,	'd'}, /* a file, list of dirs */
+		{"dot-files-dir",	1,	0,	'f'}, /* hidden dirs synced here */
+		{"cloud-target",	1,	0,	'c'}, /* name of cloud dir */
 		{0,	0,	0,	0}
 		};
 
