@@ -191,9 +191,9 @@ mdata
 	 * exist, but will return NULL instead. All other errors are always
 	 * fatal. If extra is non-zero will provide extra space, init to 0.
 	*/
-	mdata  *ret = NULL;
+	mdata *ret = NULL;
 	if (exists_file(path)) {
-		ret = malloc(sizeof(mdata ));
+		ret = malloc(sizeof(mdata));
 		if (!ret) {
 			fputs("Out of memory.\n", stderr);
 			exit(EXIT_FAILURE);
