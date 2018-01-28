@@ -28,7 +28,7 @@ options_t process_options(int argc, char **argv)
 {
 	synopsis = thesynopsis();
 	helptext = thehelp();
-	optstring = ":hd:Dl:c:";
+	optstring = ":hd:f:c:";
 
 	/* declare and set defaults for local variables. */
 
@@ -43,12 +43,11 @@ options_t process_options(int argc, char **argv)
 		int this_option_optind = optind ? optind : 1;
 		int option_index = 0;
 		static struct option long_options[] = {
-		{"help",		0,	0,	'h'},
-		{"dirs-from",	1,	0,	'd'},
-		{"dot-files",	0,	0,	'D'},
-		{"dot-files-dir",	1,	0,	'l'},
+		{"help",			0,	0,	'h'},
+		{"dirs-from",		1,	0,	'd'},
+		{"dot-files-dir",	1,	0,	'f'},
 		{"cloud-target",	1,	0,	'c'},
-		{0,	0,	0,	0 }
+		{0,	0,	0,	0}
 		};
 
 		c = getopt_long(argc, argv, optstring,
@@ -68,10 +67,7 @@ options_t process_options(int argc, char **argv)
 		case 'd':
 			opts.dirs_from = xstrdup(optarg);
 			break;
-		case 'D':
-			opts.do_dot_files = 1;
-			break;
-		case 'l':
+		case 'f':
 			opts.dot_files_dir = xstrdup(optarg);
 			break;
 		case 'c':

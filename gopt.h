@@ -26,10 +26,8 @@ char *synopsis;
 
 typedef struct options_t {	// to be initialised with required vars.
 	char	*dirs_from;		// -d, --dirs-from
-	int	 	do_dot_files;	// -D, --dot-files
-	char	*dot_files_dir;	// -l, --dot-files-dir
+	char	*dot_files_dir;	// -f, --dot-files-dir
 	char	*cloud_target;	// -c, --cloud-target
-
 } options_t;
 
 void dohelp(int forced);
