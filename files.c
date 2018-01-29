@@ -265,6 +265,7 @@ copyfile(const char *pathfro, const char *pathto)
 {/* Does a file copy in user space. */
 	mdata *fd = readfile(pathfro, 1, 0);
 	writefile(pathto, fd->fro, fd->to, "w");
+	free(fd->fro);
 } // copyfile()
 
 void
