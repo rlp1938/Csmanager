@@ -396,16 +396,8 @@ destroystrarray(char **wordlist, size_t count)
 	free(wordlist);
 } // destroystrarray()
 
-char
-*cfg_pathtofile(const char *prn, const char *fn)
-{/* return path to a named config file. */
-	char buf[PATH_MAX];
-	sprintf(buf, "%s/.config/%s/%s", getenv("HOME"), prn, fn);
-	return xstrdup(buf);
-} // cfg_pathtofile()
-
 int
-inlist(const char *name, char **list)
+instrlist(const char *name, char **list)
 {	/* return 1 if name is found in list, 0 otherwise. */
 	if (!list) return 0;	// list may not have been made.
 	int i = 0;
@@ -414,7 +406,7 @@ inlist(const char *name, char **list)
 		i++;
 	}
 	return 0;
-} // inlist()
+} // instrlist()
 
 int
 in_uch_array(const unsigned char c, unsigned char *buf)

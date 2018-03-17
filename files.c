@@ -162,7 +162,7 @@ writefile(const char *filename, char *fro, char *to, const char *fmode)
 	*/
 	off_t len = to - fro;
 	if (len <= 0) return;
-	if (!inlist("w", "a", (char *)NULL)) {
+	if (!instrlist("w", "a", (char *)NULL)) {
 		fprintf(stderr, "Invalid mode: %s\n", fmode);
 		exit(EXIT_FAILURE);
 	}

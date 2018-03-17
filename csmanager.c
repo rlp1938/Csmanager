@@ -128,7 +128,7 @@ char
 		char buf[PATH_MAX];
 		strcpy(buf, dirname);
 		strjoin(buf, '/', de->d_name, PATH_MAX);
-		if(inlist(buf, excl_list)) continue;
+		if(instrlist(buf, excl_list)) continue;
 		meminsert(buf, md, meminc);
 	}
 	doclosedir(thedir);

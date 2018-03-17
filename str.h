@@ -104,11 +104,8 @@ trimspace(char *buf);
 void
 destroystrarray(char **str_array, size_t count);
 
-char
-*cfg_pathtofile(const char *prn, const char *fn);
-
 int
-inlist(const char *find, char **list);
+instrlist(const char *find, char **list);
 
 int
 in_uch_array(const unsigned char, unsigned char *);
